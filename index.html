@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our First Webpage</title>
+    <style>
+        h1 {
+            color: white;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        p {
+            background-color: grey;
+        }
+
+        .details {
+            font-size: 50px;
+        }
+
+        #user_name {
+            color: blue;
+        }
+
+        #user_pin_numb {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="background-color: black;">Hello World!</h1>
+    <h5>Glad to have you...</h5>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Nesciunt, ullam?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+        alt="jslogo.png" title="This is a JS logo!!" srcset="" />
+    <form id="user_submission_form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+        <br />
+        <label for="pin">PIN Number</label>
+        <input type="password" id="pin" name="pinnumber" />
+        <br />
+        <button type="submit">Submit</button>
+        <br />
+    </form>
+    <br />
+    <span class='details' id='user_name'>User Name: </span>
+    <br />
+    <span class='details' id='user_pin_numb'>User PIN Number: </span>
+</body>
+<script>
+    function handle_form_submit(event) {
+        //replace action="#"
+        event.preventDefault();
+
+        const user_input_name = document.getElementById('username');
+        const user_input_pin = document.getElementById('pin');
+
+        const user_name = document.getElementById('user_name');
+        const user_pin_numb = document.getElementById('user_pin_numb');
+
+        user_name.style.color = 'green';
+
+        // replace method=""
+        user_name.textContent += user_input_name.value;
+        user_pin_numb.textContent += user_input_pin.value;
+    }
+
+    const user_form = document.getElementById('user_submission_form');
+
+    //replace onsubmit=""
+    user_form.addEventListener('submit', handle_form_submit);
+</script>
+
+</html>
